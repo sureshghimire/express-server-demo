@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>expres-server-demo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <button type="button" class="btn">Make Request '/json'</button>
+        <p class="response">
+
+        </p>
+        <script>
+             $('.btn').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8888/",
+                success: function (data) {
+                    console.log(data)
+                    $(".response").text(`Data: ${data}`);
+                }
+            });
+        });
+        </script>
+</body>
+</html>
